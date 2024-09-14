@@ -34,4 +34,9 @@ class SessionController extends Controller
         }
         
     }
+
+    function doLogout() {
+        Auth::logout();
+        return redirect('/');
+    }
 }

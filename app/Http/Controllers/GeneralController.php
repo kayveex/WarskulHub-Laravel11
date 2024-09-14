@@ -9,8 +9,8 @@ class GeneralController extends Controller
 {
     // Function to show the dashboard
     function indexOfDashboard() {
-        // $userData = Auth::user();
-        // return view('Pages.home', compact('userData'));
-        return view('Pages.home');
+        $userData = Auth::user();
+        return view('Pages.home', compact('userData'));
+        // return view('Pages.home');
     }
 }

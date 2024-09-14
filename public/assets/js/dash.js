@@ -1,5 +1,16 @@
-
-
+// let toggleBtn = document.getElementById('menuToggleBtn').addEventListener('click', () => {
+//     let sidebar = document.getElementById('sidebar');
+//     sidebar.classList.toggle('translate-x-[-100%]');
+//     sidebar.classList.toggle('md:translate-x-[-100%]');
+//     sidebar.classList.toggle('md:w-[0px]');
+//     if(sidebar.classList.contains('w-[0px]')) {
+//         sidebar.classList.remove('w-[0px]');
+//         sidebar.classList.add('w-[300px]');
+//     }else {
+//         sidebar.classList.add('w-[0px]');
+//         sidebar.classList.remove('w-[300px]');
+//     }
+// });
 
 // start: Popper
 const popperInstance = {};
