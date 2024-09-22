@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WarskulHub App</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- Tailwind CSS & Preline --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- Extended CSS --}}
@@ -20,9 +21,7 @@
         {{-- Content --}}
         <div class="grow" id="content">
             @include('Layouts.navbar')
-
         </div>
-
     </div>
     {{-- Sidebar for Mobile version --}}
     @include('Layouts.sidebarmobile')

@@ -6,17 +6,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Support\Str;
-
 
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-
-    protected $table = 'users';
-    protected $primaryKey = 'id';
-    public $incrementing = false;
-    protected $keyType = 'string';
 
     /**
      * The attributes that are mass assignable.
@@ -27,9 +22,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'ulang_password',
+        'ulangPassword',
         'fotoUser',
-        'role',
+        'type'
     ];
 
     /**
@@ -55,7 +50,20 @@ class User extends Authenticatable
         ];
     }
 
-    // Automatically generate UUID for ID
+    /**
+     * Interact with the user's first name.
+     *
+     * @param  string  $value
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function type(): Attribute
+    {
+        return new Attribute(
+            get: fn ($value) =>  ["teacher", "admin", "manager"][$value],
+        );
+    }
+
+    // Generates UUID for the user
     protected static function booted()
     {
         parent::booted();
@@ -75,6 +83,4 @@ class User extends Authenticatable
     public function userToTeacher() {
         return $this->hasOne(Teachers::class, 'user_id', 'id');
     }
-
-
 }

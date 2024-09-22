@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('teachers', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->bigInteger('nuptk');
-            $table->string('name');
+            $table->string('teacher_name');
 
             // Foreign Key - One to One towards User
             $table->uuid('user_id');

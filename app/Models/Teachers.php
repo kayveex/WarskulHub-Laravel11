@@ -17,7 +17,7 @@ class Teachers extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-        'name',
+        'teacher_name',
         'nuptk',
         'user_id',
     ];

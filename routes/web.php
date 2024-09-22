@@ -1,21 +1,48 @@
 <?php
 
-use App\Http\Controllers\GeneralController;
-use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomeController;
 
-Route::middleware('guest')->group(function() {
-    Route::get('/', [SessionController::class, 'index']);
-    Route::post('/login', [SessionController::class, 'doLogin'])->name('login');
+Route::get('/', function () {
+    return view('welcome');
 });
 
-Route::middleware('auth')->group(function() {
-    Route::get('/logout', [SessionController::class, 'doLogout']);
-    Route::get('/dashboard', [GeneralController::class, 'indexOfDashboard']);
-
+// Route testing dashboard
+Route::get('/beranda', function (){
+    return view('beranda');
 });
 
-Route::middleware('admin')->group(function() {
+Auth::routes();
 
+/*------------------------------------------
+--------------------------------------------
+All Normal Users Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:teacher'])->group(function () {
+  
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+  
+    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+});
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:manager'])->group(function () {
+  
+    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+});
+
+
