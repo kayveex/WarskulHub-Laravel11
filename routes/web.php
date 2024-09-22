@@ -9,11 +9,22 @@ Route::get('/', function () {
 });
 
 // Route testing dashboard
-Route::get('/beranda', function (){
-    return view('beranda');
-});
+// Route::get('/beranda', function (){
+//     return view('beranda');
+// });
 
 Auth::routes();
+
+/*------------------------------------------
+--------------------------------------------
+Logged Users Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+});
+
+
 
 /*------------------------------------------
 --------------------------------------------
@@ -22,7 +33,7 @@ All Normal Users Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:teacher'])->group(function () {
   
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 });
   
 /*------------------------------------------
@@ -32,7 +43,7 @@ All Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
   
-    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+    // Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
 });
   
 /*------------------------------------------
@@ -42,7 +53,7 @@ All Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
   
-    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+    // Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
 });
 
 

@@ -13,7 +13,13 @@
             <i class="ph ph-list"></i>
         </button>
         {{-- Dashboard title --}}
-        <h1 class="text-lg font-semibold ml-4">Dashboard</h1>
+        @if (Auth::user()->type === 'admin')
+            <h1 class="text-lg font-semibold ml-4">Dashboard Admin</h1>
+        @elseif (Auth::user()->type === 'manager')
+            <h1 class="text-lg font-semibold ml-4">Dashboard Manajer</h1>
+        @else 
+            <h1 class="text-lg font-semibold ml-4">Dashboard Guru</h1>
+        @endif
     </section>
     <section id="right-navbar" class="flex flex-row justify-end mr-2 items-center w-1/2">
         @include('layouts.profilebtn')

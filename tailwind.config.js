@@ -11,6 +11,7 @@ export default {
       colors: {
         'primaryGreen': '#16A34A',
         'secondaryGreen': '#22C55E',
+        'thirdGreen': '#1D673D',
         'warsYellow': '#22C55E',
         'primaryDark': '#1D232A',
         'secondaryDark': '#242A31',

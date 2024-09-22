@@ -21,6 +21,8 @@
         {{-- Content --}}
         <div class="grow" id="content">
             @include('Layouts.navbar')
+
+            @yield('content')
         </div>
     </div>
     {{-- Sidebar for Mobile version --}}
