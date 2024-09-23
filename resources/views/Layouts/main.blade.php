@@ -21,8 +21,9 @@
         {{-- Content --}}
         <div class="grow" id="content">
             @include('Layouts.navbar')
-
-            @yield('content')
+            <main class="py-8 px-4">
+                @yield('content')
+            </main>
         </div>
     </div>
     {{-- Sidebar for Mobile version --}}
@@ -34,7 +35,7 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
 
     <script src="{{ asset('assets/js/dash.js') }}"></script>
-    <script>
+    {{-- <script>
         let toggleBtn = document.getElementById('menuToggleBtn').addEventListener('click', () => {
             let sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('translate-x-[-100%]');
@@ -48,7 +49,7 @@
                 sidebar.classList.remove('w-[300px]');
             }
         });
-    </script>
+    </script> --}}
 
     {{-- Custom JS --}}
     @stack('scripts')

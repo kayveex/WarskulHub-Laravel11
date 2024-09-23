@@ -8,11 +8,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route testing dashboard
-// Route::get('/beranda', function (){
-//     return view('beranda');
-// });
-
 Auth::routes();
 
 /*------------------------------------------
