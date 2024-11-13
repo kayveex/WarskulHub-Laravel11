@@ -1,7 +1,7 @@
 <div class="hs-dropdown relative inline-flex">
-    <button id="hs-dropdown-with-icons" type="button" class="hs-dropdown-toggle py-2 px-4 flex flex-row justify-center items-center gap-x-2 text-sm font-medium rounded-lg bg-transparent text-white focus:outline-none disabled:opacity-50 disabled:pointer-events-none " aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+    <button id="hs-dropdown-with-icons" type="button" class="hs-dropdown-toggle py-2 px-4 flex flex-row justify-center items-center gap-x-2 text-[20px] font-medium rounded-lg bg-transparent text-white focus:outline-none disabled:opacity-50 disabled:pointer-events-none " aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
         <img class="inline-block size-8 rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Avatar">
-        <i class="ph ph-sliders-horizontal size-[24px] pt-1"></i>
+        <i class="ph ph-sliders-horizontal size-[24px]"></i>
     </button>
   
     <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-secondaryDark shadow-md rounded-lg p-1 space-y-0.5 mt-2 divide-y divide-gray-200" role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-with-icons">

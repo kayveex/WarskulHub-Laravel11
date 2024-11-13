@@ -1,8 +1,9 @@
 <div class="w-[0px] md:w-[300px] duration-300 overflow-hidden z-30 bg-secondaryDark translate-x-[-100%] md:translate-x-0" id="sidebar">
-    <div class="flex flex-col p-4">
-        <a href="/dashboard" class="flex items-center justify-center pb-4 border-b-2 border-b-primaryGreen">
+    <div class="flex flex-col px-4 py-3">
+        <a href="/dashboard" class="flex items-center justify-center pb-2">
             <img width="200px" src="{{ asset('assets/img/logo_dash.png') }}" alt="">
         </a>
+        <hr class="border-primaryGreen border-[1.5px]" />
     </div>
     <ul class="px-4">
         <li class="mb-1 group active">
