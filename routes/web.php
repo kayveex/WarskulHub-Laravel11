@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Teachers\KelasSayaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,6 +28,16 @@ All Normal Users Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:teacher'])->group(function () {
+    // Routes for View
+    Route::get('/kelas-saya', [KelasSayaController::class, 'index'])->name('kelas-saya');
+
+    // Routes for Create
+
+
+    // Routes for Update
+
+
+    // Routes for Delete
   
 
 });

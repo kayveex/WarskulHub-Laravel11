@@ -21,7 +21,7 @@
         {{-- Content --}}
         <div class="grow" id="content">
             @include('Layouts.navbar')
-            <main class="py-8 px-4">
+            <main class="py-10 px-8">
                 @yield('content')
             </main>
         </div>

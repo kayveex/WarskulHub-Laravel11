@@ -1,4 +1,4 @@
-<div class="py-2 px-6 h-[55px] bg-primaryGreen flex flex-row items-center w-full shadow-md shadow-black/5 sticky top-0 left-0 z-30">
+<div class="py-8 px-8 h-[55px] bg-primaryGreen flex flex-row items-center w-full shadow-md shadow-black/5 sticky top-0 left-0 z-30">
     <section 
     id="left-navbar"
     class="flex flex-row items-center w-1/2">
